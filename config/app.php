@@ -39,6 +39,12 @@ return [
     |
     */
 
+    'providers' => [
+    // Outros providers...
+    App\Providers\RouteServiceProvider::class,
+],
+
+
     'debug' => (bool) env('APP_DEBUG', false),
 
     /*

@@ -1,17 +1,21 @@
 <?php
-
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Departamento;
+use App\Models\Funcionario;
 
 class DepartamentoFuncionarioSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
+    public function run()
     {
-        //
+        // Criar o departamento
+        $departamento = Departamento::create(['nome' => 'TI']);
+
+        // Criar o funcionário
+        Funcionario::create([
+            'nome' => 'Carlos Souza',
+            'departamento_id' => $departamento->id
+        ]);
     }
 }

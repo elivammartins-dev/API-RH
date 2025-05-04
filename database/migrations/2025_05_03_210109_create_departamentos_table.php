@@ -4,24 +4,19 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateDepartamentosTable extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    public function up(): void
+    public function up()
     {
         Schema::create('departamentos', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id(); // ID único e auto-incremento
+            $table->string('nome'); // Nome do departamento
+            $table->timestamps(); // Colunas created_at e updated_at
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('departamentos');
     }
-};
+}
